@@ -1,0 +1,71 @@
+﻿<Window x:Class="list.OknoEdycji"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:list"
+        mc:Ignorable="d"
+        Title="OknoEdycji" Height="274" Width="800">
+    <Window.Resources>
+       
+      
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="SteelBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="75"/>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Height" Value="23"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Height" Value="23"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+       
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#EEEEEE" Margin="0,0,0,6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Nazwa:" Grid.Column="0"/>
+        <TextBox Grid.Row="0" x:Name="txtNazwa" Grid.Column="1"/>
+        <Label Grid.Row="1" Content="Miejsce:" Grid.Column="0"/>
+        <TextBox Grid.Row="1" x:Name="txtMiejsce" Grid.Column="1"/>
+        <Label Grid.Row="2" Content="Czy Otwarty:" Grid.Column="0"/>
+        <CheckBox Grid.Row="2" x:Name="otwarotsc" Grid.Column="1"/>
+        <Label Grid.Row="3" Content="Obszar:" Grid.Column="0"/>
+        <ComboBox Grid.Row="3" x:Name="Typ" Grid.Column="1"/>
+        <Label Grid.Row="4" Content="Rozmiar:" Grid.Column="0"/>
+        <TextBox Grid.Row="4" x:Name="rozmiar" Grid.Column="1"/>
+        <Label Grid.Row="5" Content="Czy była inspekcja?:" Grid.Column="0"/>
+        <CheckBox Grid.Row="5" x:Name="inspekcja" Grid.Column="1"/>
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,0,0,-27">
+            <Button Content="Zapisz" Click="btnZapisz_Click" Style="{StaticResource ButtonStyle}" Grid.Column="0"/>
+            <Button Content="Anuluj" Click="btnAnuluj_Click" Style="{StaticResource ButtonStyle}" Grid.Column="1"/>
+        </StackPanel>
+    </Grid>
+</Window>
